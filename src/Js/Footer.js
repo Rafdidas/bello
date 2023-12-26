@@ -2,7 +2,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import 'swiper/css';
 import { Autoplay, Parallax } from 'swiper/modules';
-import { Link } from "react-router-dom";
 
 
 const Footer = () => {
