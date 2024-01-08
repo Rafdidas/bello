@@ -3,19 +3,18 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import 'swiper/css/effect-fade';
-import { Autoplay, Pagination, Navigation, Parallax } from 'swiper/modules';
+import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
+import PrdBoxNew from "./PrdBoxNew";
+import {data, bnr_text } from "./Data";
+import { useState } from "react";
+
+import TextSlide from "./TextSlide";
+import PrdBoxMd from "./PrdBoxMd";
+
 const Main = () => {
 
-    const texts0 = [
-        'black friday 11.24-12.23, 30days',
-        'black friday 11.24-12.23, 30days',
-        'black friday 11.24-12.23, 30days',
-        'black friday 11.24-12.23, 30days',
-        'black friday 11.24-12.23, 30days',
-        'black friday 11.24-12.23, 30days',
-        'black friday 11.24-12.23, 30days',
-        'black friday 11.24-12.23, 30days',
-    ]
+    const [prdData, setPrdData] = useState(data);
+    const [bnr, setBnr] = useState([1,2,3]);
 
     return (
         <div id="main">
@@ -27,17 +26,17 @@ const Main = () => {
                 </div>
             </div>
             <Swiper pagination={{
-                type: 'fraction',
-            }}
-            navigation={true}
-            modules={[Autoplay, Pagination, Navigation ]}
-            loop={true}
-            speed={'700'}
-            autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-            }}
-            className="main_visual"
+                    type: 'fraction',
+                }}
+                navigation={true}
+                modules={[ Autoplay, Pagination, Navigation ]}
+                loop={true}
+                speed={'700'}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                className="main_visual"
             >
                 <SwiperSlide >
                     <div className="bnr_img">
@@ -55,14 +54,7 @@ const Main = () => {
                     </div>
                 </SwiperSlide>
             </Swiper>
-
-            <Swiper modules={[Autoplay, Parallax]} centeredSlides={true} className="txt_slide txt_slide0" spaceBetween={0} speed={5000} autoplay={{delay: 1, disableOnInteraction: false,}} loop={true} slidesPerView={'auto'}  >
-                {
-                    texts0 && texts0.map((text, index) => (
-                        <SwiperSlide key={index} className={`txt_slideBox`}>{text}</SwiperSlide>
-                    ))
-                }
-            </Swiper>
+            <TextSlide/>
             <div className="main_new">
                 <div className="bnr_img"><img src={process.env.PUBLIC_URL + '../img/new_bnr_mo1.png'} alt="new banner" /></div>
                 <div className="new_txt wrap_inner">
@@ -72,6 +64,87 @@ const Main = () => {
                         매일 새롭게 입고되는 상품을 만나보세요.<br/>
                         가볍지만 포근한 아이템들로 겨울을 미리 준비하세요.
                     </p>
+                </div>
+                
+                <div className="new_prdList">
+                    <Swiper className="new_slide" 
+                        modules={[Autoplay, Pagination] }
+                        pagination={{
+                            type: 'progressbar',
+                        }}
+                        loop={true} 
+                        slidesPerView={2.3}
+                        spaceBetween={1}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        speed={700}
+                    >
+                    {
+                        prdData.map(function(prdData, index){
+                            return (
+                                <SwiperSlide key={index}><PrdBoxNew prdData={prdData} /></SwiperSlide>
+                            )
+                        })
+                    }
+                    </Swiper>
+                </div>
+            </div>
+            <TextSlide/>
+            <Swiper pagination={{
+                    type: 'fraction',
+                }}
+                navigation={true}
+                modules={[ Autoplay, Pagination, Navigation, EffectFade ]}
+                loop={true}
+                speed={'700'}
+                autoplay={{
+                    delay: 2500,
+                    disableOnInteraction: false,
+                }}
+                effect={'fade'}
+                className="mid_bnr"
+            >
+                {
+                    bnr.map(function(bnr,index){
+                        return (
+                            <SwiperSlide key={index}>
+                                <img src={process.env.PUBLIC_URL + `../img/mid_bnr${bnr}.png`} alt="mid banner"/>
+                                <div className="txt">
+                                    <h3>{bnr_text[index].title}</h3>
+                                    <p>{bnr_text[index].sub}</p>
+                                </div>
+                            </SwiperSlide>
+                        )
+                    })
+                }
+            </Swiper>
+            <TextSlide/>
+            <div className="main_md">
+                <div className="md_prdList">
+                    <Swiper className="md_slide" 
+                        modules={[Autoplay, Pagination] }
+                        pagination={{
+                            type: 'progressbar',
+                        }}
+                        loop={true} 
+                        slidesPerView={1.4}
+                        spaceBetween={1}
+                        autoplay={{
+                            delay: 2500,
+                            disableOnInteraction: false,
+                        }}
+                        speed={700}
+                    >
+                    {
+                        prdData.map(function(prdData, index){
+                            return (
+                                <SwiperSlide key={index}><PrdBoxMd  prdData={prdData} /></SwiperSlide>
+                            )
+                        })
+                    }
+                    </Swiper>
                 </div>
             </div>
         </div>

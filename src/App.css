@@ -118,7 +118,7 @@ footer .copyright .github a {padding-left:20px; background:url('../public/img/ft
 
 #main .main_topTxt {padding:50px 0 20px;}
 #main .main_topTxt p {font-size:1.833rem; font-weight:600; line-height:28px; letter-spacing:-1.1px; text-decoration-line:underline;}
-
+/* main visual */
 #main .main_visual .swiper-pagination {display:flex; justify-content:center; align-items:center; left:auto; right:12px; bottom:12px; width:64px; height:18px; background:var(--white); border-radius:10px; font-size:1rem; line-height:18px; letter-spacing:3px;}
 #main .main_visual .swiper-pagination > span {display:block; width:10px; margin:0 1px; font-size:1rem; line-height:18px; letter-spacing:3px;}
 #main .main_visual .swiper-button-next,
@@ -133,7 +133,54 @@ footer .copyright .github a {padding-left:20px; background:url('../public/img/ft
 #main .txt_slide .swiper-slide {width:auto;}
 #main .txt_slide .txt_slideBox {position:relative; padding:0 20px; color:var(--gray-font); font-size:1rem; font-weight:400; line-height:31px; letter-spacing:-0.6px; text-transform: uppercase;}
 #main .txt_slide .txt_slideBox:after {display:block; position:absolute; top:50%; right:0; width:2px; height:2px; margin-top:-1px; background:var(--gray-font); border-radius:50%; content:'';}
-
+/* main new */
+#main .main_new {margin-bottom:50px;}
 #main .main_new .new_txt > h3 {padding:30px 0 6px; font-size:1.333rem; font-weight:700; letter-spacing:-0.48px; line-height:16px; }
 #main .main_new .new_txt > .sub_eng {padding:0 0 20px; font-size:1rem; font-weight:400; letter-spacing:-0.39px; line-height:12px; text-transform:uppercase; text-decoration-line:underline;}
 #main .main_new .new_txt > .sub_kor {padding:0 0 40px; color:#555; font-size:1.083rem; font-weight:400; letter-spacing:-0.39px; }
+#main .main_new .new_prdList {display:flex; justify-content:space-between;}
+#main .main_new .new_slide {padding-bottom:20px;}
+#main .main_new .swiper-wrapper {height:auto;}
+#main .main_new .new_prdList .prd_box {position:relative;}
+#main .main_new .new_prdList .prd_box .img img {width:100%; height:auto;}
+#main .main_new .new_prdList .prd_box .info {padding:18px 12px 0;}
+#main .main_new .new_prdList .prd_box .info .prd_name {display:flex; justify-content:flex-start; align-items:center;}
+#main .main_new .new_prdList .prd_box .info .prd_name > * {color:#555; font-size:1.083rem; font-weight:400; letter-spacing:-0.39px;}
+#main .main_new .new_prdList .prd_box .info .price {display:flex; justify-content:flex-start; align-items:center;}
+#main .main_new .new_prdList .prd_box .info .price > p {padding-right:5px;}
+#main .main_new .new_prdList .prd_box .info .price .del {text-decoration-line:line-through; text-decoration-color:#555;}
+#main .main_new .new_prdList .prd_box .info .status {padding-top:8px; color:#000; font-size:0.833rem; font-weight:700; letter-spacing:-0.5px;}
+#main .main_new .new_prdList .prd_box .info .wish {display:block; position:absolute; top:10px; right:10px; width:19px; height:19px; background:url('../public/img/wish_off.png') no-repeat center/19px auto; text-indent:-9999px; cursor:pointer; transition: all .5s ease;}
+#main .main_new .new_prdList .prd_box .info .wish.on {background-image:url(../public/img/wish_on.png);}
+#main .main_new .swiper-pagination {position:static; width:93.4%; height:1px; margin:19px auto 0; background:#eee;}
+#main .main_new .swiper-pagination-progressbar-fill {background-color:#000;}
+/* mid bnr */
+#main .mid_bnr .swiper-pagination {display:flex; justify-content:center; align-items:center; left:auto; right:12px; bottom:19%; width:64px; height:18px; background:var(--white); border-radius:10px; font-size:1rem; line-height:18px; letter-spacing:3px;}
+#main .mid_bnr .swiper-pagination > span {display:block; width:10px; margin:0 1px; font-size:1rem; line-height:18px; letter-spacing:3px;}
+#main .mid_bnr .swiper-button-next,
+#main .mid_bnr .swiper-button-prev {display:block; z-index:20; top:auto; bottom:19%; width:20px; height:18px; margin:0; }
+#main .mid_bnr .swiper-button-next:after,
+#main .mid_bnr .swiper-button-prev:after {display:none;}
+#main .mid_bnr .swiper-button-next {right:12px; background:url('../public/img/main_next.png') no-repeat center/auto 7px;}
+#main .mid_bnr .swiper-button-prev {left:auto; right:60px; background: url('../public/img/main_prev.png') no-repeat center/auto 7px;}
+#main .mid_bnr .txt {padding:20px 3.3% 50px;}
+#main .mid_bnr .txt > h3 {padding-bottom:6px; font-size:1.333rem; letter-spacing:-0.48px;}
+#main .mid_bnr .txt > p {color:var(--gray2-font); font-size:1.083rem; font-weight:500; letter-spacing:-0.39px;}
+/* main md */
+#main .main_md {margin-bottom:34px;}
+#main .main_md .md_prdList {display:flex; justify-content:space-between;}
+#main .main_md .swiper-wrapper {height:auto;}
+#main .main_md .md_prdList .prd_box {position:relative;}
+#main .main_md .md_prdList .prd_box .img img {width:100%; height:auto;}
+#main .main_md .md_prdList .prd_box .info {padding:18px 12px 0;}
+#main .main_md .md_prdList .prd_box .info .prd_name {display:flex; justify-content:flex-start; align-items:center;}
+#main .main_md .md_prdList .prd_box .info .prd_name > * {color:#555; font-size:1.083rem; font-weight:400; letter-spacing:-0.39px;}
+#main .main_md .md_prdList .prd_box .info .price {display:flex; justify-content:flex-start; align-items:center; }
+#main .main_md .md_prdList .prd_box .info .price > p {padding-right:5px;}
+#main .main_md .md_prdList .prd_box .info .price .del {text-decoration-line:line-through; text-decoration-color:#555;}
+#main .main_md .md_prdList .prd_box .info .status {padding-top:8px; color:#000; font-size:0.833rem; font-weight:700; letter-spacing:-0.5px;}
+#main .main_md .md_prdList .prd_box .info .wish {display:block; position:absolute; top:10px; right:10px; width:19px; height:19px; background:url('../public/img/wish_off.png') no-repeat center/19px auto; text-indent:-9999px; cursor:pointer; transition: all .5s ease;}
+#main .main_md .md_prdList .prd_box .info .wish.on {background-image:url(../public/img/wish_on.png);}
+#main .main_md .swiper-pagination {position:static; width:93.4%; height:1px; margin:19px auto 0; background:#eee;}
+#main .main_md .swiper-pagination-progressbar-fill {background-color:#000;}
+#main .main_md .new_slide {padding-bottom:20px;}
