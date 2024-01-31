@@ -1,20 +1,17 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
-import 'swiper/css/effect-fade';
-import { Autoplay, Pagination, Navigation, EffectFade } from 'swiper/modules';
-import PrdBoxNew from "./PrdBoxNew";
-import {data, bnr_text } from "./Data";
+
+import {data, } from "./Data";
 import { useState } from "react";
 
 import TextSlide from "./TextSlide";
-import PrdBoxMd from "./PrdBoxMd";
+import MainVisual from "./MainSlide/MainVisual";
+import NewPrdSlide from "./MainSlide/NewPrdSlide";
+import MidBnr from "./MainSlide/MidBnr";
+import MdSlide from "./MainSlide/MdSlide";
+import BottomBnr from "./MainSlide/BottomBnr";
 
 const Main = () => {
 
     const [prdData, setPrdData] = useState(data);
-    const [bnr, setBnr] = useState([1,2,3]);
 
     return (
         <div id="main">
@@ -25,35 +22,7 @@ const Main = () => {
                     <p className="txt_field">12월 03일까지 진행됩니다.</p>
                 </div>
             </div>
-            <Swiper pagination={{
-                    type: 'fraction',
-                }}
-                navigation={true}
-                modules={[ Autoplay, Pagination, Navigation ]}
-                loop={true}
-                speed={'700'}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                className="main_visual"
-            >
-                <SwiperSlide >
-                    <div className="bnr_img">
-                        <img src={process.env.PUBLIC_URL + '../img/main_bnr_mo1.png'} alt="main banner" />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide >
-                    <div className="bnr_img">
-                        <img src={process.env.PUBLIC_URL + '../img/main_bnr_mo1.png'} alt="main banner" />
-                    </div>
-                </SwiperSlide>
-                <SwiperSlide >
-                    <div className="bnr_img">
-                        <img src={process.env.PUBLIC_URL + '../img/main_bnr_mo1.png'} alt="main banner" />
-                    </div>
-                </SwiperSlide>
-            </Swiper>
+            <MainVisual/>
             <TextSlide/>
             <div className="main_new">
                 <div className="bnr_img"><img src={process.env.PUBLIC_URL + '../img/new_bnr_mo1.png'} alt="new banner" /></div>
@@ -67,85 +36,28 @@ const Main = () => {
                 </div>
                 
                 <div className="new_prdList">
-                    <Swiper className="new_slide" 
-                        modules={[Autoplay, Pagination] }
-                        pagination={{
-                            type: 'progressbar',
-                        }}
-                        loop={true} 
-                        slidesPerView={2.3}
-                        spaceBetween={1}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
-                        speed={700}
-                    >
-                    {
-                        prdData.map(function(prdData, index){
-                            return (
-                                <SwiperSlide key={index}><PrdBoxNew prdData={prdData} /></SwiperSlide>
-                            )
-                        })
-                    }
-                    </Swiper>
+                    <NewPrdSlide prdData={prdData} setPrdData={setPrdData} />
                 </div>
             </div>
             <TextSlide/>
-            <Swiper pagination={{
-                    type: 'fraction',
-                }}
-                navigation={true}
-                modules={[ Autoplay, Pagination, Navigation, EffectFade ]}
-                loop={true}
-                speed={'700'}
-                autoplay={{
-                    delay: 2500,
-                    disableOnInteraction: false,
-                }}
-                effect={'fade'}
-                className="mid_bnr"
-            >
-                {
-                    bnr.map(function(bnr,index){
-                        return (
-                            <SwiperSlide key={index}>
-                                <img src={process.env.PUBLIC_URL + `../img/mid_bnr${bnr}.png`} alt="mid banner"/>
-                                <div className="txt">
-                                    <h3>{bnr_text[index].title}</h3>
-                                    <p>{bnr_text[index].sub}</p>
-                                </div>
-                            </SwiperSlide>
-                        )
-                    })
-                }
-            </Swiper>
+            <MidBnr/>
             <TextSlide/>
             <div className="main_md">
                 <div className="md_prdList">
-                    <Swiper className="md_slide" 
-                        modules={[Autoplay, Pagination] }
-                        pagination={{
-                            type: 'progressbar',
-                        }}
-                        loop={true} 
-                        slidesPerView={1.4}
-                        spaceBetween={1}
-                        autoplay={{
-                            delay: 2500,
-                            disableOnInteraction: false,
-                        }}
-                        speed={700}
-                    >
-                    {
-                        prdData.map(function(prdData, index){
-                            return (
-                                <SwiperSlide key={index}><PrdBoxMd  prdData={prdData} /></SwiperSlide>
-                            )
-                        })
-                    }
-                    </Swiper>
+                    <MdSlide prdData={prdData} setPrdData={setPrdData} />
                 </div>
+            </div>
+            <TextSlide/>
+            <div className="main_md_txt">
+                <div className="bnr_img">
+                    <img src={process.env.PUBLIC_URL + '../img/md_bnr.png'} alt="md banner" />
+                </div>
+                <div className="md_txt">
+                    <h3>엠디가 선택한 추천상품</h3>
+                    <p className="sub_eng">MD's choice</p>
+                    <p className="sub_kor">엠디들도 소장하고 싶은, 위시리스트 가볍지만 포근한 아이템들로 겨울을 미리 준비하세요.</p>
+                </div>
+                <BottomBnr/>
             </div>
         </div>
     )

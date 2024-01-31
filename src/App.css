@@ -96,9 +96,33 @@ header .gnb .gnb_menu {display:flex; justify-content:center; align-items:center;
 header .gnb .gnb_menu > li.gnb_cart > a {display:block; width:19px; height:19px; background:url('../public/img/cart.png') no-repeat center/19px auto; text-indent: -9999px;}
 header .gnb .gnb_menu > li > span {display:block; width:19px; height:19px;  text-indent: -9999px;}
 header .gnb .gnb_menu > li.gnb_srch span {background: url('../public/img/search.png') no-repeat center/18px auto;}
-header .gnb .gnb_menu > li.gnb_menu span {background: url('../public/img/menu.png') no-repeat center/16px auto;}
+header .gnb .gnb_menu > li.gnb_menu span {background: url('../public/img/menu.png') no-repeat center/16px auto; cursor:pointer;}
+/* nav */
+nav.lnb {visibility:hidden; position:fixed; top:0; left:-100%; z-index:100; width:100%; height:100%; background:#fff; transition:all .3s ease;}
+nav.lnb.visible {visibility:visible; left:0;}
+nav.lnb .top_section {display:flex; justify-content:space-between; align-items:center; width:100%; height:50px; padding:0 12px;}
+nav.lnb .top_section > h1 > a {color:var(--black-font); font-size:1.666rem; font-weight:600; letter-spacing:-0.1px; line-height:20px;}
+nav.lnb .top_section .close {display:block; width:19px; height:19px; text-indent: -9999px; background: url('../public/img/close.png') no-repeat center/19px auto; cursor:pointer;}
+nav.lnb .menu_section {margin-top:17px; padding:0 6%;}
+nav.lnb .menu_section > li,
+nav.lnb .menu_section li.more_link {margin-bottom:14px;}
+nav.lnb .menu_section li.more_link {cursor:pointer;}
+nav.lnb .menu_section > li > a {padding-left:10px;}
+nav.lnb .menu_section > li > a,
+nav.lnb .menu_section li.more_link {color:var(--black-font); font-size:1.083rem; font-weight:400; letter-spacing:-0.65px; line-height:13px;}
+nav.lnb .menu_section .sml_menu {padding:20px 0 0 10px;}
+nav.lnb .menu_section .sml_menu > li:not(:last-of-type) {padding-bottom:10px;}
+nav.lnb .menu_section .sml_menu > li > a {color:var(--gray2-font); font-size:1rem; font-weight:400; letter-spacing:-0.6px;}
+
+nav.lnb .my_menu {padding:56px 6% 0;}
+nav.lnb .my_menu > li {margin-bottom:14px; padding-left:10px;}
+nav.lnb .my_menu > li > a {color:var(--black-font); font-size:1.083rem; font-weight:400; letter-spacing:-0.65px;}
+
+nav.lnb .login_menu {display:flex; justify-content:flex-end; align-items:center; column-gap:20px; padding:79px 32px 0 0;}
+nav.lnb .login_menu > li > a {color:var(--black-font); font-size:1.083rem; font-weight:400; letter-spacing:-0.65px;}
 
 /* footer */
+footer {padding-bottom:50px;}
 footer .ft_txt_slide { height:31px; border:1px solid var(--black-font); border-width:1px 0; }
 footer .swiper-wrapper {transition-timing-function:linear;}
 footer .ft_txt_slide .swiper-slide {width:auto;}
@@ -112,10 +136,22 @@ footer .copyright {padding:30px 0 0;}
 footer .copyright .copyright_text {padding-bottom:4px;}
 footer .copyright .github a {padding-left:20px; background:url('../public/img/ft_github.png') no-repeat center left/auto 14px;}
 
+
+/* prdbox */
+.prd_box {position:relative;}
+.prd_box .img img {width:100%; height:auto;}
+.prd_box .info {padding:18px 12px 0;}
+.prd_box .info .prd_name {display:flex; justify-content:flex-start; align-items:center;}
+.prd_box .info .prd_name > * {color:#555; font-size:1.083rem; font-weight:400; letter-spacing:-0.39px;}
+.prd_box .info .price {display:flex; justify-content:flex-start; align-items:center; }
+.prd_box .info .price > p {padding-right:5px;}
+.prd_box .info .price .del {text-decoration-line:line-through; text-decoration-color:#555;}
+.prd_box .info .status {padding-top:8px; color:#000; font-size:0.833rem; font-weight:700; letter-spacing:-0.5px;}
+.prd_box .info .wish {display:block; position:absolute; top:10px; right:10px; width:19px; height:19px; background:url('../public/img/wish_off.png') no-repeat center/19px auto; text-indent:-9999px; cursor:pointer; transition: all .5s ease;}
+.prd_box .info .wish.on {background-image:url(../public/img/wish_on.png);}
+
 /* main */
-
 #main .bnr_img img {width:100%; height:auto;}
-
 #main .main_topTxt {padding:50px 0 20px;}
 #main .main_topTxt p {font-size:1.833rem; font-weight:600; line-height:28px; letter-spacing:-1.1px; text-decoration-line:underline;}
 /* main visual */
@@ -184,3 +220,34 @@ footer .copyright .github a {padding-left:20px; background:url('../public/img/ft
 #main .main_md .swiper-pagination {position:static; width:93.4%; height:1px; margin:19px auto 0; background:#eee;}
 #main .main_md .swiper-pagination-progressbar-fill {background-color:#000;}
 #main .main_md .new_slide {padding-bottom:20px;}
+/* md banner */
+#main .main_md_txt {padding-bottom:50px;}
+#main .main_md_txt .md_txt {margin-bottom:40px; padding:0 3.3%;}
+#main .main_md_txt .md_txt > h3 {padding:30px 0 6px; font-size:1.333rem; font-weight:700; letter-spacing:-0.48px;}
+#main .main_md_txt .md_txt .sub_eng {font-weight:400; letter-spacing:-0.36px; text-decoration-line:underline; text-transform:uppercase;}
+#main .main_md_txt .md_txt .sub_kor {padding-top:20px; color:var(--gray2-font); font-weight:400; letter-spacing:-0.39px; word-break:keep-all;}
+#main .main_md_txt .swiper-slide img {width:100%; height:auto;}
+
+/* shop list */
+#shopList .list_slide {margin-left:1.6%; padding:17px 0 25px;}
+#shopList .list_slide .img img {width:100%; height:auto;}
+#shopList .list_slide .txt {padding-top:10px; font-size:1.083rem; font-weight:600; text-align:center;}
+
+#shopList .list_inner {padding:0 1.6%;}
+#shopList .list_inner .list_filter {display:flex; justify-content:space-between; align-items:center; padding:20px 0 12px; border-top: 1px solid #eee;}
+#shopList .list_inner .list_filter * {color:var(--gray-font); font-size:1.08rem; font-weight:400; letter-spacing:-0.65px; line-height:13px;}
+#shopList .list_inner .list_filter .field {padding-right:13px; background:url('../public/img/filter_icon.png') no-repeat center right/8px auto; cursor:pointer;}
+#shopList .list_inner .list_filter > select {border:none; background: url('../public/img/down_icon.png') no-repeat center right/8px auto; appearance:none; outline:none;}
+#shopList .list_inner .prd_list {display:grid; grid-template-columns:repeat(2, 1fr); align-items:start; column-gap:4px; row-gap:30px;}
+#shopList .list_inner .prd_list .prd_box .info {padding:14px 0 0;}
+
+#shopList .pagination_section {margin:30px 0 80px; padding-top:20px; border-top:1px solid #ddd;}
+#shopList .pagination_section .pagination {display:flex; justify-content:center; align-items:center; column-gap:34px;}
+#shopList .pagination_section .pagination > li > span {color:var(--gray-font); font-size:1rem; font-weight:400; letter-spacing:-0.6px; cursor:pointer;}
+#shopList .pagination_section .pagination > li.active > span {color:var(--black-font);}
+
+#shopList .pagination_section .pagination > li.first_page span,
+#shopList .pagination_section .pagination > li.last_page span {display:block; width:49px; height:25px; background:#000; text-indent:-9999px;}
+#shopList .pagination_section .pagination > li.first_page span {mask:url('../public/img/prev.svg') no-repeat center/100% auto;}
+#shopList .pagination_section .pagination > li.last_page span {mask:url('../public/img/next.svg') no-repeat center/100% auto;}
+#shopList .pagination_section .pagination > li.disabled > span {background-color:var(--gray-font);}
