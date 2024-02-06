@@ -40,7 +40,7 @@ const Footer = () => {
             <div className="copyright">
                 <div className="wrap_inner">
                     <p className="copyright_text">Developed by Hyeongyu Park</p>
-                    <p className="github"><a href="https://github.com/Rafdidas/movie_site" target="_blank" rel="noopener noreferrer">View Code</a></p>
+                    <p className="github"><a href="https://github.com/Rafdidas/bello" target="_blank" rel="noopener noreferrer">View Code</a></p>
                 </div>
             </div>
         </footer>

@@ -153,5 +153,63 @@ const list_txt = [
     
 ]
 
+const filterColor = [
+    {
+        id : 0,
+        txt : '네이비',
+        code: '#0A2882'
+    },
+    {
+        id : 1,
+        txt : '베이지',
+        code: '#F2E2C1'
+    },
+    {
+        id : 2,
+        txt : '브라운',
+        code: '#71594F'
+    },
+    {
+        id : 3,
+        txt : '그린',
+        code: '#46B01A'
+    },
+    {
+        id : 4,
+        txt : '카키',
+        code: '#56735F'
+    },
+    {
+        id : 5,
+        txt : '레드',
+        code: '#F01E1F'
+    },
+    {
+        id : 6,
+        txt : '옐로우',
+        code: '#FFC825'
+    },
+    {
+        id : 7,
+        txt : '퍼플',
+        code: '#9736E1'
+    },
+    {
+        id : 8,
+        txt : '오렌지',
+        code: '#FF9A00'
+    },
+    {
+        id : 9,
+        txt : '실버',
+        code: '#E6E6E6'
+    },
+    {
+        id : 10,
+        txt : '골드',
+        code: '#EFD284'
+    }
+]
 
-export { data, bnr_text, cateMenu, list_txt };
+
+export { data, bnr_text, cateMenu, list_txt, filterColor };

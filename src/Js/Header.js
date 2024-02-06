@@ -37,7 +37,7 @@ const Header = () => {
                     <p className="close" onClick={closeLnb}>close</p>
                 </div>
                 <ul className="menu_section">
-                    <li><Link to={'/'}>신상품</Link></li>
+                    <li><Link to={'/shop'}>신상품</Link></li>
                     <li><Link to={'/'}>인기상품</Link></li>
                     {
                         
