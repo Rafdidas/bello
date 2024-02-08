@@ -22,6 +22,9 @@ const Detail = () => {
                     <SwiperSlide>
                         <img src={process.env.PUBLIC_URL + `../../img/detail1.png`} alt="product_image"/>
                     </SwiperSlide>
+                    <SwiperSlide>
+                        <img src={process.env.PUBLIC_URL + `../../img/detail1.png`} alt="product_image"/>
+                    </SwiperSlide>
                 </Swiper>
             </div>
         </div>
