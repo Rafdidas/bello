@@ -276,3 +276,7 @@ footer .copyright .github a {padding-left:20px; background:url('../public/img/ft
 .filter_pop .btn_color .color_list {display:grid; grid-template-columns:repeat(3,1fr); padding:24px 12px 0;}
 .filter_pop .btn_color .color_list .unit {display:flex; align-items:center; justify-content:start; column-gap:12px; margin-bottom:11px; cursor:pointer;}
 .filter_pop .btn_color .color_list .unit > span {display:block; width:14px; height:14px; border-radius:50%;}
+
+/* detail */
+#detail .detail_img .detail_slide .swiper-slide img {width:100%; height:auto;}
+#detail .detail_img .detail_slide .swiper-pagination {border:1px solid red;}
